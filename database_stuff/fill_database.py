@@ -1,5 +1,8 @@
 import json
-from database_stuff.models import session_creator, Games, GamePlayerMetadata
+from database_stuff.models import session_creator, Games, GamePlayerMetadata, GameFrames
+import os
+import re
+from dateutil import parser
 
 
 def load_games():
@@ -60,3 +63,59 @@ def load_metadata():
 
         session.commit()
         session.close()
+
+
+def load_frames():
+    file_count = 1
+    for file in os.listdir("../data/frames"):
+        if file.endswith("json"):
+            with open(f"../data/frames/{str(file)}") as frames_file:
+                frames = json.load(frames_file)
+                game_id = re.findall(r"\d+", frames_file.name)
+
+                session = session_creator()
+
+                frame_count = 1
+                total_frames = len(frames)
+                for frame in frames:
+                    timestamp = parser.isoparse(frame["rfc460Timestamp"])
+                    player_count = 0
+                    for player in frame["participants"]:
+                        session.add(
+                            GameFrames(
+                                game_id=game_id[0],
+                                participant_id=player["participantId"],
+                                timestamp=timestamp,
+                                level=player["level"],
+                                kills=player["kills"],
+                                deaths=player["deaths"],
+                                assists=player["assists"],
+                                totalGoldEarned=player["totalGoldEarned"],
+                                creepScore=player["creepScore"],
+                                killParticipation=player["killParticipation"],
+                                championDamageShare=player["championDamageShare"],
+                                wardsPlaced=player["wardsPlaced"],
+                                wardsDestroyed=player["wardsDestroyed"],
+                                attackDamage=player["attackDamage"],
+                                abilityPower=player["abilityPower"],
+                                criticalChance=player["criticalChance"],
+                                attackSpeed=player["attackSpeed"],
+                                lifeSteal=player["lifeSteal"],
+                                armor=player["armor"],
+                                magicResistance=player["magicResistance"],
+                                tenacity=player["tenacity"],
+                                items=player["items"],
+                                main_rune=player["perkMetadata"]["styleId"],
+                                second_rune=player["perkMetadata"]["subStyleId"],
+                                rune_choices=player["perkMetadata"]["perks"],
+                                abilities=player["abilities"],
+                            )
+                        )
+                        print(f"File: {file_count} | Frame: {frame_count}/{total_frames} | Player: {player_count}")
+                        player_count += 1
+                    frame_count += 1
+                session.commit()
+                session.close()
+        file_count += 1
+
+load_frames()
