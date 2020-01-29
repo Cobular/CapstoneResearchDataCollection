@@ -265,3 +265,4 @@ venv.bak/
 pip-selfcheck.json
 
 # End of https://www.gitignore.io/api/python,pycharm,intellij,venv
+data/frames/
