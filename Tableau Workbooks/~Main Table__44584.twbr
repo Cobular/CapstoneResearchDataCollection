@@ -1,0 +1,1650 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20194.20.0221.0754                               -->
+<workbook source-build='2019.4.4 (20194.20.0221.0754)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='games+ (postgres)' inline='true' name='federated.0hh97jb1n3ri4t14l0xak1yejdox' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='localhost' name='postgres.0himkii0ivzflo17qyhml1m7rp3j'>
+            <connection authentication='username-password' class='postgres' dbname='postgres' odbc-native-protocol='' one-time-sql='' port='5432' server='localhost' username='postgres' />
+          </named-connection>
+        </named-connections>
+        <relation join='full' type='join'>
+          <clause type='join'>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[game_frames].[game_id]' />
+                <expression op='[game_player_metadata].[game_id]' />
+              </expression>
+              <expression op='='>
+                <expression op='[game_frames].[participant_id]' />
+                <expression op='[game_player_metadata].[participant_id]' />
+              </expression>
+            </expression>
+          </clause>
+          <relation join='full' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[games].[game_id]' />
+                <expression op='[game_frames].[game_id]' />
+              </expression>
+            </clause>
+            <relation connection='postgres.0himkii0ivzflo17qyhml1m7rp3j' name='games' table='[public].[games]' type='table' />
+            <relation connection='postgres.0himkii0ivzflo17qyhml1m7rp3j' name='game_frames' table='[public].[game_frames]' type='table' />
+          </relation>
+          <relation connection='postgres.0himkii0ivzflo17qyhml1m7rp3j' name='game_player_metadata' table='[public].[game_player_metadata]' type='table' />
+        </relation>
+        <cols>
+          <map key='[abilities]' value='[game_frames].[abilities]' />
+          <map key='[abilityPower]' value='[game_frames].[abilityPower]' />
+          <map key='[armor]' value='[game_frames].[armor]' />
+          <map key='[assists]' value='[game_frames].[assists]' />
+          <map key='[attackDamage]' value='[game_frames].[attackDamage]' />
+          <map key='[attackSpeed]' value='[game_frames].[attackSpeed]' />
+          <map key='[blue_team]' value='[game_player_metadata].[blue_team]' />
+          <map key='[championDamageShare]' value='[game_frames].[championDamageShare]' />
+          <map key='[champion_id]' value='[game_player_metadata].[champion_id]' />
+          <map key='[creepScore]' value='[game_frames].[creepScore]' />
+          <map key='[criticalChance]' value='[game_frames].[criticalChance]' />
+          <map key='[deaths]' value='[game_frames].[deaths]' />
+          <map key='[esports_player_id]' value='[game_player_metadata].[esports_player_id]' />
+          <map key='[esports_team_id]' value='[game_player_metadata].[esports_team_id]' />
+          <map key='[game_id (game_frames)]' value='[game_frames].[game_id]' />
+          <map key='[game_id (game_player_metadata)]' value='[game_player_metadata].[game_id]' />
+          <map key='[game_id]' value='[games].[game_id]' />
+          <map key='[id]' value='[game_frames].[id]' />
+          <map key='[items]' value='[game_frames].[items]' />
+          <map key='[killParticipation]' value='[game_frames].[killParticipation]' />
+          <map key='[kills]' value='[game_frames].[kills]' />
+          <map key='[level]' value='[game_frames].[level]' />
+          <map key='[lifeSteal]' value='[game_frames].[lifeSteal]' />
+          <map key='[magicResistance]' value='[game_frames].[magicResistance]' />
+          <map key='[main_rune (game_player_metadata)]' value='[game_player_metadata].[main_rune]' />
+          <map key='[match_id]' value='[game_player_metadata].[match_id]' />
+          <map key='[participant_id (game_player_metadata)]' value='[game_player_metadata].[participant_id]' />
+          <map key='[participant_id]' value='[game_frames].[participant_id]' />
+          <map key='[role]' value='[game_player_metadata].[role]' />
+          <map key='[rune_choices_1]' value='[game_player_metadata].[rune_choices_1]' />
+          <map key='[rune_choices_2]' value='[game_player_metadata].[rune_choices_2]' />
+          <map key='[rune_choices_3]' value='[game_player_metadata].[rune_choices_3]' />
+          <map key='[rune_choices_4]' value='[game_player_metadata].[rune_choices_4]' />
+          <map key='[rune_choices_5]' value='[game_player_metadata].[rune_choices_5]' />
+          <map key='[rune_choices_6]' value='[game_player_metadata].[rune_choices_6]' />
+          <map key='[rune_choices_7]' value='[game_player_metadata].[rune_choices_7]' />
+          <map key='[rune_choices_8]' value='[game_player_metadata].[rune_choices_8]' />
+          <map key='[rune_choices_9]' value='[game_player_metadata].[rune_choices_9]' />
+          <map key='[second_rune (game_player_metadata)]' value='[game_player_metadata].[second_rune]' />
+          <map key='[summoner_name]' value='[game_player_metadata].[summoner_name]' />
+          <map key='[tenacity]' value='[game_frames].[tenacity]' />
+          <map key='[timestamp]' value='[game_frames].[timestamp]' />
+          <map key='[totalGoldEarned]' value='[game_frames].[totalGoldEarned]' />
+          <map key='[wardsDestroyed]' value='[game_frames].[wardsDestroyed]' />
+          <map key='[wardsPlaced]' value='[game_frames].[wardsPlaced]' />
+          <map key='[win]' value='[game_player_metadata].[win]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>game_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[game_id]</local-name>
+            <parent-name>[games]</parent-name>
+            <remote-alias>game_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIGINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SBIGINT&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>game_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[game_id (game_frames)]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>game_id</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIGINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SBIGINT&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>participant_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[participant_id]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>participant_id</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>timestamp</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[timestamp]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>timestamp</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <precision>6</precision>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIME&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIME&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>level</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[level]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>level</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kills</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[kills]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>kills</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>deaths</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[deaths]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>deaths</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>assists</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[assists]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>assists</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>totalGoldEarned</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[totalGoldEarned]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>totalGoldEarned</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>creepScore</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[creepScore]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>creepScore</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>killParticipation</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[killParticipation]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>killParticipation</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>championDamageShare</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[championDamageShare]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>championDamageShare</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>wardsPlaced</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[wardsPlaced]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>wardsPlaced</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>wardsDestroyed</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[wardsDestroyed]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>wardsDestroyed</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>attackDamage</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[attackDamage]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>attackDamage</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>abilityPower</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[abilityPower]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>abilityPower</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>criticalChance</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[criticalChance]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>criticalChance</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>attackSpeed</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[attackSpeed]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>attackSpeed</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lifeSteal</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[lifeSteal]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>lifeSteal</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>armor</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[armor]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>armor</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>magicResistance</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[magicResistance]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>magicResistance</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tenacity</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[tenacity]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>tenacity</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>items</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[items]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>items</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>abilities</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[abilities]</local-name>
+            <parent-name>[game_frames]</parent-name>
+            <remote-alias>abilities</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>game_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[game_id (game_player_metadata)]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>game_id</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIGINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SBIGINT&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>match_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[match_id]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>match_id</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIGINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SBIGINT&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>blue_team</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[blue_team]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>blue_team</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_BIT&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>esports_player_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[esports_player_id]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>esports_player_id</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIGINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SBIGINT&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>participant_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[participant_id (game_player_metadata)]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>participant_id</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>summoner_name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[summoner_name]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>summoner_name</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>champion_id</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[champion_id]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>champion_id</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>15</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>role</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[role]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>role</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>7</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>esports_team_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[esports_team_id]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>esports_team_id</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIGINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SBIGINT&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>main_rune</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[main_rune (game_player_metadata)]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>main_rune</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rune_choices_1</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[rune_choices_1]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>rune_choices_1</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rune_choices_2</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[rune_choices_2]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>rune_choices_2</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rune_choices_3</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[rune_choices_3]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>rune_choices_3</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rune_choices_4</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[rune_choices_4]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>rune_choices_4</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rune_choices_5</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[rune_choices_5]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>rune_choices_5</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rune_choices_6</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[rune_choices_6]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>rune_choices_6</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rune_choices_7</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[rune_choices_7]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>rune_choices_7</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rune_choices_8</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[rune_choices_8]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>rune_choices_8</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rune_choices_9</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[rune_choices_9]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>rune_choices_9</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>second_rune</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[second_rune (game_player_metadata)]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>second_rune</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>win</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[win]</local-name>
+            <parent-name>[game_player_metadata]</parent-name>
+            <remote-alias>win</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_BIT&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='string' name='[Role (group)]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[role]' new-bin='true'>
+          <bin default-name='true' value='&quot;bottom&quot;'>
+            <value>&quot;bottom&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;jungle&quot;'>
+            <value>&quot;jungle&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;mid&quot;'>
+            <value>&quot;mid&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;support&quot;'>
+            <value>&quot;support&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;top&quot;'>
+            <value>&quot;top&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column caption='Abilities' datatype='string' name='[abilities]' role='dimension' type='nominal' />
+      <column caption='Ability Power' datatype='integer' name='[abilityPower]' role='measure' type='quantitative' />
+      <column caption='Armor' datatype='integer' name='[armor]' role='measure' type='quantitative' />
+      <column caption='Assists' datatype='integer' name='[assists]' role='measure' type='quantitative' />
+      <column caption='Attack Damage' datatype='integer' name='[attackDamage]' role='measure' type='quantitative' />
+      <column caption='Attack Speed' datatype='integer' name='[attackSpeed]' role='measure' type='quantitative' />
+      <column caption='Blue Team' datatype='boolean' name='[blue_team]' role='dimension' type='nominal' />
+      <column caption='Champion Damage Share' datatype='integer' name='[championDamageShare]' role='measure' type='quantitative' />
+      <column caption='Champion Id' datatype='string' name='[champion_id]' role='dimension' type='nominal' />
+      <column caption='Creep Score' datatype='integer' name='[creepScore]' role='measure' type='quantitative' />
+      <column caption='Critical Chance' datatype='integer' name='[criticalChance]' role='measure' type='quantitative' />
+      <column caption='Deaths' datatype='integer' name='[deaths]' role='measure' type='quantitative' />
+      <column caption='Esports Player Id' datatype='integer' name='[esports_player_id]' role='dimension' type='ordinal' />
+      <column caption='Esports Team Id' datatype='integer' name='[esports_team_id]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Game Id (Game Frames)' datatype='integer' name='[game_id (game_frames)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Game Id (Game Player Metadata)' datatype='integer' name='[game_id (game_player_metadata)]' role='dimension' type='ordinal' />
+      <column caption='Game Id' datatype='integer' name='[game_id]' role='dimension' type='ordinal' />
+      <column caption='Id' datatype='integer' name='[id]' role='dimension' type='ordinal' />
+      <column caption='Items' datatype='string' name='[items]' role='dimension' type='nominal' />
+      <column caption='Kill Participation' datatype='integer' name='[killParticipation]' role='measure' type='quantitative' />
+      <column caption='Kills' datatype='integer' name='[kills]' role='measure' type='quantitative' />
+      <column caption='Level' datatype='integer' name='[level]' role='measure' type='quantitative' />
+      <column caption='Life Steal' datatype='integer' name='[lifeSteal]' role='measure' type='quantitative' />
+      <column caption='Magic Resistance' datatype='integer' name='[magicResistance]' role='measure' type='quantitative' />
+      <column caption='Match Id' datatype='integer' name='[match_id]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Participant Id (Game Player Metadata)' datatype='integer' name='[participant_id (game_player_metadata)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Participant Id' datatype='integer' name='[participant_id]' role='dimension' type='ordinal' />
+      <column caption='Role' datatype='string' name='[role]' role='dimension' type='nominal' />
+      <column aggregation='Sum' datatype='integer' name='[rune_choices_1]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[rune_choices_2]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[rune_choices_3]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[rune_choices_4]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[rune_choices_5]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[rune_choices_6]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[rune_choices_7]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[rune_choices_8]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[rune_choices_9]' role='dimension' type='ordinal' />
+      <column caption='Summoner Name' datatype='string' name='[summoner_name]' role='dimension' type='nominal' />
+      <column caption='Tenacity' datatype='integer' name='[tenacity]' role='measure' type='quantitative' />
+      <column aggregation='Hour' caption='Timestamp' datatype='datetime' name='[timestamp]' role='dimension' type='ordinal' />
+      <column caption='Total Gold Earned' datatype='integer' name='[totalGoldEarned]' role='measure' type='quantitative' />
+      <column caption='Wards Destroyed' datatype='integer' name='[wardsDestroyed]' role='measure' type='quantitative' />
+      <column caption='Wards Placed' datatype='integer' name='[wardsPlaced]' role='measure' type='quantitative' />
+      <column datatype='boolean' name='[win]' role='dimension' type='nominal' />
+      <column-instance column='[assists]' derivation='Avg' name='[avg:assists:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[creepScore]' derivation='Avg' name='[avg:creepScore:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[wardsPlaced]' derivation='Avg' name='[avg:wardsPlaced:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[blue_team]' derivation='None' name='[none:blue_team:nk]' pivot='key' type='nominal' />
+      <column-instance column='[role]' derivation='None' name='[none:role:nk]' pivot='key' type='nominal' />
+      <column-instance column='[win]' derivation='None' name='[none:win:nk]' pivot='key' type='nominal' />
+      <column-instance column='[assists]' derivation='Sum' name='[sum:assists:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[creepScore]' derivation='Sum' name='[sum:creepScore:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[wardsPlaced]' derivation='Sum' name='[sum:wardsPlaced:qk]' pivot='key' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.277487' measure-ordering='alphabetic' measure-percentage='0.722513' show-structure='true' user-set-layout='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:blue_team:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>true</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>false</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:role:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;support&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;mid&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;jungle&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;top&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;bottom&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:assists:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0hh97jb1n3ri4t14l0xak1yejdox].[sum:assists:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:wardsPlaced:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0hh97jb1n3ri4t14l0xak1yejdox].[sum:wardsPlaced:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:creepScore:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0hh97jb1n3ri4t14l0xak1yejdox].[sum:creepScore:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:win:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>false</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>true</bucket>
+            </map>
+          </encoding>
+          <encoding attr='shape' field='[none:win:nk]' type='shape'>
+            <map to='circle'>
+              <bucket>true</bucket>
+            </map>
+            <map to='times'>
+              <bucket>false</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Factors on winrate per Role'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='games+ (postgres)' name='federated.0hh97jb1n3ri4t14l0xak1yejdox' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0hh97jb1n3ri4t14l0xak1yejdox'>
+            <column caption='Ability Power' datatype='integer' name='[abilityPower]' role='measure' type='quantitative' />
+            <column caption='Assists' datatype='integer' name='[assists]' role='measure' type='quantitative' />
+            <column-instance column='[abilityPower]' derivation='Avg' name='[avg:abilityPower:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[assists]' derivation='Avg' name='[avg:assists:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[creepScore]' derivation='Avg' name='[avg:creepScore:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[deaths]' derivation='Avg' name='[avg:deaths:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[kills]' derivation='Avg' name='[avg:kills:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[lifeSteal]' derivation='Avg' name='[avg:lifeSteal:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[totalGoldEarned]' derivation='Avg' name='[avg:totalGoldEarned:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[wardsPlaced]' derivation='Avg' name='[avg:wardsPlaced:qk]' pivot='key' type='quantitative' />
+            <column caption='Creep Score' datatype='integer' name='[creepScore]' role='measure' type='quantitative' />
+            <column caption='Deaths' datatype='integer' name='[deaths]' role='measure' type='quantitative' />
+            <column caption='Kills' datatype='integer' name='[kills]' role='measure' type='quantitative' />
+            <column caption='Life Steal' datatype='integer' name='[lifeSteal]' role='measure' type='quantitative' />
+            <column-instance column='[role]' derivation='None' name='[none:role:nk]' pivot='key' type='nominal' />
+            <column-instance column='[win]' derivation='None' name='[none:win:nk]' pivot='key' type='nominal' />
+            <column caption='Role' datatype='string' name='[role]' role='dimension' type='nominal' />
+            <column caption='Total Gold Earned' datatype='integer' name='[totalGoldEarned]' role='measure' type='quantitative' />
+            <column caption='Wards Placed' datatype='integer' name='[wardsPlaced]' role='measure' type='quantitative' />
+            <column datatype='boolean' name='[win]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:kills:qk]' included-values='in-range' />
+          <filter class='categorical' column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:role:nk]' kind='hide'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:role:nk]' />
+              <groupfilter function='member' level='[none:role:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:role:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>%all%</bucket>
+              <bucket>&quot;bottom&quot;</bucket>
+              <bucket>&quot;mid&quot;</bucket>
+              <bucket>&quot;jungle&quot;</bucket>
+              <bucket>&quot;top&quot;</bucket>
+              <bucket>&quot;support&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:kills:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:role:nk]' value='104' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:creepScore:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-color' id='refline0' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <dropline drop-when='selected' haslabel='false' x-axis='true' y-axis='false' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:creepScore:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:assists:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:wardsPlaced:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:abilityPower:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='5' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:kills:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <dropline drop-when='selected' haslabel='false' x-axis='true' y-axis='false' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='6' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:deaths:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='7' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:lifeSteal:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <dropline drop-when='selected' haslabel='false' x-axis='true' y-axis='false' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='8' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:totalGoldEarned:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <dropline drop-when='selected' haslabel='false' x-axis='true' y-axis='false' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:role:nk]</rows>
+        <cols>([federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:totalGoldEarned:qk] + ([federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:lifeSteal:qk] + ([federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:deaths:qk] + ([federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:kills:qk] + ([federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:abilityPower:qk] + ([federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:creepScore:qk] + ([federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:assists:qk] + [federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:wardsPlaced:qk])))))))</cols>
+      </table>
+      <simple-id uuid='{0FE3FA41-156A-425B-BEDB-D5ABB9BC8622}' />
+    </worksheet>
+    <worksheet name='Factors on winrate per Role (2)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='games+ (postgres)' name='federated.0hh97jb1n3ri4t14l0xak1yejdox' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0hh97jb1n3ri4t14l0xak1yejdox'>
+            <column caption='Ability Power' datatype='integer' name='[abilityPower]' role='measure' type='quantitative' />
+            <column caption='Assists' datatype='integer' name='[assists]' role='measure' type='quantitative' />
+            <column-instance column='[abilityPower]' derivation='Avg' name='[avg:abilityPower:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[assists]' derivation='Avg' name='[avg:assists:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[creepScore]' derivation='Avg' name='[avg:creepScore:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[deaths]' derivation='Avg' name='[avg:deaths:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[kills]' derivation='Avg' name='[avg:kills:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[lifeSteal]' derivation='Avg' name='[avg:lifeSteal:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[totalGoldEarned]' derivation='Avg' name='[avg:totalGoldEarned:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[wardsPlaced]' derivation='Avg' name='[avg:wardsPlaced:qk]' pivot='key' type='quantitative' />
+            <column caption='Champion Id' datatype='string' name='[champion_id]' role='dimension' type='nominal' />
+            <column caption='Creep Score' datatype='integer' name='[creepScore]' role='measure' type='quantitative' />
+            <column caption='Deaths' datatype='integer' name='[deaths]' role='measure' type='quantitative' />
+            <column caption='Kills' datatype='integer' name='[kills]' role='measure' type='quantitative' />
+            <column caption='Life Steal' datatype='integer' name='[lifeSteal]' role='measure' type='quantitative' />
+            <column-instance column='[champion_id]' derivation='None' name='[none:champion_id:nk]' pivot='key' type='nominal' />
+            <column-instance column='[role]' derivation='None' name='[none:role:nk]' pivot='key' type='nominal' />
+            <column-instance column='[win]' derivation='None' name='[none:win:nk]' pivot='key' type='nominal' />
+            <column caption='Role' datatype='string' name='[role]' role='dimension' type='nominal' />
+            <column caption='Total Gold Earned' datatype='integer' name='[totalGoldEarned]' role='measure' type='quantitative' />
+            <column caption='Wards Placed' datatype='integer' name='[wardsPlaced]' role='measure' type='quantitative' />
+            <column datatype='boolean' name='[win]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:kills:qk]' included-values='in-range' />
+          <filter class='categorical' column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:role:nk]' kind='hide'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:role:nk]' />
+              <groupfilter function='member' level='[none:role:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:role:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>%all%</bucket>
+              <bucket>&quot;bottom&quot;</bucket>
+              <bucket>&quot;mid&quot;</bucket>
+              <bucket>&quot;jungle&quot;</bucket>
+              <bucket>&quot;top&quot;</bucket>
+              <bucket>&quot;support&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:kills:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:role:nk]' value='104' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:creepScore:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-color' id='refline0' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <dropline drop-when='selected' haslabel='false' x-axis='true' y-axis='false' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:creepScore:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:assists:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:wardsPlaced:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:abilityPower:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='5' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:kills:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <dropline drop-when='selected' haslabel='false' x-axis='true' y-axis='false' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='6' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:deaths:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='7' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:lifeSteal:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <dropline drop-when='selected' haslabel='false' x-axis='true' y-axis='false' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='8' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:totalGoldEarned:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+              <shape column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <dropline drop-when='selected' haslabel='false' x-axis='true' y-axis='false' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:role:nk] / [federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:champion_id:nk])</rows>
+        <cols>([federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:totalGoldEarned:qk] + ([federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:lifeSteal:qk] + ([federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:deaths:qk] + ([federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:kills:qk] + ([federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:abilityPower:qk] + ([federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:creepScore:qk] + ([federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:assists:qk] + [federated.0hh97jb1n3ri4t14l0xak1yejdox].[avg:wardsPlaced:qk])))))))</cols>
+      </table>
+      <simple-id uuid='{C548872A-AD90-4902-BDDF-8A4512C30C0E}' />
+    </worksheet>
+    <worksheet name='Random'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='games+ (postgres)' name='federated.0hh97jb1n3ri4t14l0xak1yejdox' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0hh97jb1n3ri4t14l0xak1yejdox'>
+            <column caption='Champion Id' datatype='string' name='[champion_id]' role='dimension' type='nominal' />
+            <column caption='Kill Participation' datatype='integer' name='[killParticipation]' role='measure' type='quantitative' />
+            <column caption='Kills' datatype='integer' name='[kills]' role='measure' type='quantitative' />
+            <column-instance column='[champion_id]' derivation='None' name='[none:champion_id:nk]' pivot='key' type='nominal' />
+            <column-instance column='[killParticipation]' derivation='None' name='[none:killParticipation:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[kills]' derivation='None' name='[none:kills:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[role]' derivation='None' name='[none:role:nk]' pivot='key' type='nominal' />
+            <column-instance column='[summoner_name]' derivation='None' name='[none:summoner_name:nk]' pivot='key' type='nominal' />
+            <column caption='Role' datatype='string' name='[role]' role='dimension' type='nominal' />
+            <column-instance column='[kills]' derivation='Sum' name='[sum:kills:qk]' pivot='key' type='quantitative' />
+            <column caption='Summoner Name' datatype='string' name='[summoner_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[sum:kills:qk]' included-values='non-null' />
+          <slices>
+            <column>[federated.0hh97jb1n3ri4t14l0xak1yejdox].[sum:kills:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:champion_id:nk]' />
+            </encodings>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:kills:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:champion_id:nk]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:killParticipation:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:champion_id:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:summoner_name:nk]</rows>
+        <cols>([federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:role:nk] * ([federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:kills:qk] + [federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:killParticipation:qk]))</cols>
+      </table>
+      <simple-id uuid='{9F69D1D3-ADEC-4C3E-AA2C-14ADBC76C1BB}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='games+ (postgres)' name='federated.0hh97jb1n3ri4t14l0xak1yejdox' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0hh97jb1n3ri4t14l0xak1yejdox'>
+            <column datatype='integer' name='[main_rune (game_player_metadata)]' role='measure' type='quantitative' />
+            <column-instance column='[main_rune (game_player_metadata)]' derivation='None' name='[none:main_rune (game_player_metadata):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[role]' derivation='None' name='[none:role:nk]' pivot='key' type='nominal' />
+            <column-instance column='[win]' derivation='None' name='[none:win:nk]' pivot='key' type='nominal' />
+            <column caption='Role' datatype='string' name='[role]' role='dimension' type='nominal' />
+            <column datatype='boolean' name='[win]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:role:nk]</rows>
+        <cols>[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:main_rune (game_player_metadata):qk]</cols>
+      </table>
+      <simple-id uuid='{C0D29B98-A303-4709-8F97-3289E87DC3FF}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='32'>
+    <window class='worksheet' name='Random'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='40'>
+            <card type='rows' />
+          </strip>
+          <strip size='28'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:champion_id:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{80696861-C14B-46C1-999D-6FF850B14E5D}' />
+    </window>
+    <window class='worksheet' name='Factors on winrate per Role'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='28'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='131'>
+            <card pane-specification-id='8' param='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' type='color' />
+            <card pane-specification-id='8' param='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' type='shape' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{67959D3C-B347-4696-AB0A-372D726AFF4B}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Factors on winrate per Role (2)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='27'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='130'>
+            <card pane-specification-id='8' param='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' type='color' />
+            <card pane-specification-id='8' param='[federated.0hh97jb1n3ri4t14l0xak1yejdox].[none:win:nk]' type='shape' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{D8C897F8-69DC-48EF-8505-CF7F78E7A241}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FFF3B74B-A98B-49F4-9BB9-B1747AA8442A}' />
+    </window>
+  </windows>
+</workbook>
