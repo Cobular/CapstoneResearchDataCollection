@@ -30,7 +30,6 @@ class Games(Base):
 class GamePlayerMetadata(Base):
     __tablename__ = "game_player_metadata"
 
-    id = Column(Integer)
     game_id = Column(
         BIGINT, ForeignKey("games.game_id"), primary_key=True, nullable=False
     )
@@ -42,6 +41,18 @@ class GamePlayerMetadata(Base):
     summoner_name = Column(String(50), nullable=False)
     champion_id = Column(String(15), nullable=False)
     role = Column(String(7), nullable=False)
+    main_rune = Column(Integer, nullable=True)
+    second_rune = Column(Integer, nullable=True)
+    rune_choices_1 = Column(Integer, ForeignKey("runes_lookup.id"), nullable=True)
+    rune_choices_2 = Column(Integer, ForeignKey("runes_lookup.id"), nullable=True)
+    rune_choices_3 = Column(Integer, ForeignKey("runes_lookup.id"), nullable=True)
+    rune_choices_4 = Column(Integer, ForeignKey("runes_lookup.id"), nullable=True)
+    rune_choices_5 = Column(Integer, ForeignKey("runes_lookup.id"), nullable=True)
+    rune_choices_6 = Column(Integer, ForeignKey("runes_lookup.id"), nullable=True)
+    rune_choices_7 = Column(Integer, ForeignKey("runes_lookup.id"), nullable=True)
+    rune_choices_8 = Column(Integer, ForeignKey("runes_lookup.id"), nullable=True)
+    rune_choices_9 = Column(Integer, ForeignKey("runes_lookup.id"), nullable=True)
+    win = Column(Boolean)
 
     def __repr__(self):
         return f"{self.summoner_name} playing {self.champion_id}"
@@ -73,9 +84,6 @@ class GameFrames(Base):
     magicResistance = Column(Integer, nullable=False)
     tenacity = Column(Integer, nullable=False)
     items = Column(ARRAY(Integer), nullable=False)
-    main_rune = Column(Integer, nullable=False)
-    second_rune = Column(Integer, nullable=False)
-    rune_choices = Column(ARRAY(Integer), nullable=False)
     abilities = Column(ARRAY(VARCHAR(1)))
 
     ForeignKeyConstraint(
@@ -87,7 +95,14 @@ class GameFrames(Base):
         return f"{self.participant_id} in {self.game_id}"
 
 
+class RunesLookup(Base):
+    __tablename__ = "runes_lookup"
+
+    id = Column(Integer, primary_key=true)
+    name = Column(String(40), nullable=False)
+    shortDesc = Column(Text)
+
+
 def session_creator() -> Session:
     session = sessionmaker(bind=engine)
     return session()
-
